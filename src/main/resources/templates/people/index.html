@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Peoples</title>
+</head>
+<body>
+<h1>CRUDSpringWebApp</h1>
+<div style="text-align: center; font-size: 25px" th:each="person : ${people}">
+    <a th:href="@{/people/{id}(id=${person.getId()})}"
+       th:text="${person.getName()} + ', ' + ${person.getAge()}">person name</a>
+</div>
+<button style="margin: 30px; padding: 30px; border-radius: 15px"><a href="/people/new">Create new</a></button>
+</body>
+</html>

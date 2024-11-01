@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show one People</title>
+</head>
+<body style="font-size: 25px">
+<h1>User info</h1>
+
+<p th:text="'ID : ' + ${person.getId()}">ID</p>
+<p th:text="'Name : ' + ${person.getName()}">name</p>
+<p th:text="'age : ' + ${person.getAge()}">age</p>
+<p th:text="'E-mail : ' + ${person.getEmail()}">E-mail</p>
+
+<button style="margin: 30px; padding: 30px; border-radius: 15px"><a href="/people">Go back</a></button>
+<button style="margin: 30px; padding: 30px; border-radius: 15px"><a th:href="@{/people/{id}/edit(id=${person.getId()})}">Edit</a></button>
+<form th:method="DELETE" th:action="@{/people/{id}(id=${person.getId()})}">
+    <input style="margin: 30px; padding: 30px; border-radius: 15px" type="submit" value="Delete!">
+</form>
+</body>
+</html>
